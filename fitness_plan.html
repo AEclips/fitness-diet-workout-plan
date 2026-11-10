@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fitness, Diet &amp; Gym Workout Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --ink-900: #0F172A;
+      --ink-700: #334155;
+      --ink-500: #64748B;
+      --border: #E2E8F0;
+      --emerald-900: #064E3B;
+      --emerald-800: #065F46;
+      --emerald-700: #047857;
+      --emerald-600: #059669;
+      --emerald-500: #10B981;
+      --emerald-100: #D1FAE5;
+      --emerald-50: #ECFDF5;
+      --teal-600: #0D9488;
+      --amber-700: #B45309;
+      --amber-600: #D97706;
+      --amber-100: #FEF3C7;
+      --amber-50: #FFFBEB;
+      --indigo-700: #4338CA;
+      --indigo-600: #4F46E5;
+      --indigo-100: #E0E7FF;
+      --indigo-50: #EEF2FF;
+      --rose-600: #E11D48;
+      --rose-50: #FFF1F2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-page);
+      color: var(--ink-900);
+      line-height: 1.45;
+      font-size: 10.5pt;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 11mm 12mm 10mm 12mm;
+      background: var(--bg-page);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page-body {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      flex: 1;
+    }
+
+    /* Top Running Bar for Pages 2-4 */
+    .running-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 7px;
+      border-bottom: 1.5px solid var(--border);
+      font-size: 8.8pt;
+      color: var(--ink-500);
+      font-weight: 600;
+    }
+
+    .running-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--emerald-800);
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 7px;
+      border-top: 1px solid var(--border);
+      font-size: 8.2pt;
+      color: var(--ink-500);
+      margin-top: 8px;
+    }
+
+    /* Hero Header on Page 1 */
+    .hero-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #064E3B 62%, #0D9488 100%);
+      border-radius: 14px;
+      padding: 18px 22px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(6, 78, 59, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      right: -35px;
+      top: -35px;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-left {
+      max-width: 72%;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.24);
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #A7F3D0;
+      padding: 3.5px 11px;
+      border-radius: 999px;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .hero-title {
+      font-size: 18.5pt;
+      font-weight: 700;
+      line-height: 1.22;
+      margin-bottom: 4px;
+    }
+
+    .hero-sub {
+      font-size: 9.8pt;
+      color: #E2E8F0;
+    }
+
+    .hero-right {
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 11px;
+      padding: 11px 16px;
+      text-align: right;
+      z-index: 1;
+    }
+
+    .hero-right .label {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #A7F3D0;
+      font-weight: 700;
+    }
+
+    .hero-right .val {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 2px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .section-num {
+      background: var(--emerald-600);
+      color: white;
+      font-weight: 700;
+      font-size: 10pt;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(5, 150, 105, 0.25);
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: var(--ink-900);
+    }
+
+    .section-pill {
+      background: var(--emerald-50);
+      color: var(--emerald-800);
+      border: 1px solid var(--emerald-100);
+      padding: 3px 11px;
+      border-radius: 999px;
+      font-size: 8.4pt;
+      font-weight: 600;
+    }
+
+    /* Profile Box */
+    .profile-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 13px 14px;
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 9px;
+    }
+
+    .stat-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 8px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-card.highlight {
+      background: var(--emerald-50);
+      border-color: #A7F3D0;
+    }
+
+    .stat-card.goal-card {
+      background: var(--indigo-50);
+      border-color: var(--indigo-100);
+    }
+
+    .stat-label {
+      font-size: 7.8pt;
+      color: var(--ink-500);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .stat-value {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--ink-900);
+      line-height: 1.25;
+    }
+
+    .stat-card.highlight .stat-value {
+      color: var(--emerald-800);
+    }
+
+    .stat-card.goal-card .stat-value {
+      color: var(--indigo-600);
+      font-size: 8.6pt;
+    }
+
+    .bmi-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(90deg, #ECFDF5 0%, #F0FDFA 100%);
+      border: 1px solid #A7F3D0;
+      border-radius: 10px;
+      padding: 9px 13px;
+    }
+
+    .bmi-gauge-wrap {
+      flex: 0 0 210px;
+    }
+
+    .bmi-gauge-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: var(--emerald-800);
+      margin-bottom: 4px;
+    }
+
+    .bmi-bar {
+      height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #38BDF8 0%, #10B981 24%, #10B981 64%, #F59E0B 80%, #EF4444 100%);
+      position: relative;
+    }
+
+    .bmi-marker {
+      position: absolute;
+      left: 55%;
+      top: -3.5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #064E3B;
+      border: 2.5px solid #FFFFFF;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+    }
+
+    .bmi-note {
+      font-size: 9.1pt;
+      color: var(--emerald-900);
+      font-weight: 500;
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    /* Meal Schedule Bar */
+    .meal-timing-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 7px 10px;
+    }
+
+    .timing-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 8pt;
+      color: var(--ink-700);
+      font-weight: 600;
+    }
+
+    .timing-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald-500);
+      flex-shrink: 0;
+    }
+
+    /* Diet Cards 2x2 Grid */
+    .diet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    .day-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .day-card-header {
+      padding: 8px 13px;
+      background: linear-gradient(90deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 9.8pt;
+      font-weight: 700;
+    }
+
+    .day-card-header.emerald {
+      background: linear-gradient(90deg, #065F46 0%, #0D9488 100%);
+    }
+
+    .day-card-header.indigo {
+      background: linear-gradient(90deg, #3730A3 0%, #4F46E5 100%);
+    }
+
+    .day-tag {
+      font-size: 7.6pt;
+      background: rgba(255,255,255,0.2);
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .meal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      flex: 1;
+    }
+
+    .meal-table tr {
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .meal-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .meal-table td {
+      padding: 6.5px 11px;
+      vertical-align: middle;
+    }
+
+    .meal-time {
+      width: 86px;
+      font-weight: 700;
+      color: var(--emerald-800);
+      font-size: 8.3pt;
+      white-space: nowrap;
+      background: #F8FAFC;
+      border-right: 1px solid #F1F5F9;
+    }
+
+    .meal-food {
+      color: var(--ink-900);
+      font-weight: 500;
+    }
+
+    /* Info Strip at Bottom of Page 1 */
+    .tip-strip {
+      background: linear-gradient(90deg, #EEF2FF 0%, #F0FDFA 100%);
+      border: 1px solid var(--indigo-100);
+      border-radius: 10px;
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 8.8pt;
+      color: var(--ink-700);
+    }
+
+    .tip-strip strong {
+      color: var(--indigo-700);
+    }
+
+    /* Rules & Guidelines Cards */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .rule-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--emerald-600);
+      border-radius: 10px;
+      padding: 8.5px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9.2pt;
+      font-weight: 500;
+      color: var(--ink-900);
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.02);
+    }
+
+    .rule-item.span-2 {
+      grid-column: span 2;
+      background: var(--emerald-50);
+      border-color: #A7F3D0;
+      border-left: 4px solid var(--emerald-800);
+    }
+
+    .rule-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--emerald-50);
+      border: 1px solid var(--emerald-100);
+      color: var(--emerald-700);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 9.5pt;
+      flex-shrink: 0;
+    }
+
+    .rule-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--emerald-700);
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Summary Info Card on Page 2 */
+    .summary-card {
+      background: linear-gradient(135deg, #ECFDF5 0%, #F0FDFA 100%);
+      border: 1px solid #A7F3D0;
+      border-radius: 12px;
+      padding: 11px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .summary-title {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: var(--emerald-900);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .summary-list {
+      list-style: none;
+      display: grid;
+      gap: 5px;
+      font-size: 8.6pt;
+      color: var(--ink-700);
+    }
+
+    .summary-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 5px 10px;
+      border-radius: 7px;
+      border: 1px solid rgba(16, 185, 129, 0.22);
+    }
+
+    .summary-list li strong {
+      color: var(--emerald-800);
+    }
+
+    /* Weekly Habit Tracker Box on Page 2 */
+    .tracker-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 14px;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.025);
+    }
+
+    .tracker-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--ink-900);
+    }
+
+    .tracker-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.4pt;
+      text-align: center;
+    }
+
+    .tracker-table th {
+      background: #F1F5F9;
+      color: var(--ink-700);
+      padding: 5px 6px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+
+    .tracker-table td {
+      padding: 5.5px 6px;
+      border: 1px solid var(--border);
+      color: var(--ink-700);
+      font-weight: 600;
+    }
+
+    .tracker-table td:first-child,
+    .tracker-table th:first-child {
+      text-align: left;
+      padding-left: 10px;
+      width: 34%;
+    }
+
+    .check-circle {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid #94A3B8;
+      border-radius: 4px;
+    }
+
+    /* Photo Strip on Page 3 */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .photo-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      overflow: hidden;
+      box-shadow: 0 3px 7px rgba(15, 23, 42, 0.05);
+      position: relative;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 104px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-tag {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      background: rgba(15, 23, 42, 0.78);
+      color: #A7F3D0;
+      font-size: 6.5pt;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .photo-caption {
+      padding: 5px 8px;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: var(--ink-700);
+      text-align: center;
+      background: #F8FAFC;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Weekly Split Overview Strip */
+    .split-strip {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 7px 9px;
+    }
+
+    .split-day {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 4px 5px;
+      text-align: center;
+    }
+
+    .split-day.active-lower {
+      background: var(--emerald-50);
+      border-color: #A7F3D0;
+    }
+
+    .split-day.active-upper {
+      background: var(--indigo-50);
+      border-color: var(--indigo-100);
+    }
+
+    .split-day.rest {
+      background: var(--amber-50);
+      border-color: #FDE68A;
+    }
+
+    .split-day .d-num {
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--ink-500);
+      text-transform: uppercase;
+    }
+
+    .split-day .d-focus {
+      font-size: 7.6pt;
+      font-weight: 700;
+      color: var(--ink-900);
+    }
+
+    /* Workout Table inside Day Card */
+    .workout-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.8pt;
+      flex: 1;
+    }
+
+    .workout-table th {
+      background: #F1F5F9;
+      color: var(--ink-700);
+      font-size: 7.8pt;
+      font-weight: 700;
+      text-align: left;
+      padding: 5px 11px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .workout-table th:last-child,
+    .workout-table td:last-child {
+      text-align: right;
+    }
+
+    .workout-table tr {
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .workout-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .workout-table td {
+      padding: 5.5px 11px;
+      color: var(--ink-900);
+      font-weight: 500;
+    }
+
+    .rep-badge {
+      display: inline-block;
+      background: var(--emerald-50);
+      color: var(--emerald-800);
+      border: 1px solid var(--emerald-100);
+      border-radius: 999px;
+      padding: 1.5px 8px;
+      font-size: 8pt;
+      font-weight: 700;
+    }
+
+    .rep-badge.indigo {
+      background: var(--indigo-50);
+      color: var(--indigo-600);
+      border-color: var(--indigo-100);
+    }
+
+    .rep-badge.amber {
+      background: var(--amber-50);
+      color: var(--amber-700);
+      border-color: var(--amber-100);
+    }
+
+    /* Rest Day Card */
+    .rest-card {
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+      border: 1px solid #FDE68A;
+      border-radius: 12px;
+      padding: 11px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .rest-card h4 {
+      color: #92400E;
+      font-size: 10.2pt;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rest-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      font-size: 8.9pt;
+      color: #78350F;
+      font-weight: 600;
+    }
+
+    .rest-list li {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 6px 10px;
+      border-radius: 8px;
+      border-left: 3.5px solid #D97706;
+    }
+
+    /* Workout Session Flow Box on Page 4 */
+    .session-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 9px 11px;
+    }
+
+    .flow-step {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .flow-step .step-tag {
+      font-size: 7pt;
+      font-weight: 800;
+      color: var(--emerald-700);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .flow-step .step-title {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: var(--ink-900);
+    }
+
+    .flow-step .step-desc {
+      font-size: 7.6pt;
+      color: var(--ink-500);
+    }
+
+    /* Goal Footer Banner on Page 4 */
+    .goal-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #064E3B 65%, #0D9488 100%);
+      color: #FFFFFF;
+      border-radius: 13px;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 6px 18px rgba(6, 78, 59, 0.15);
+    }
+
+    .goal-banner .badge {
+      background: #10B981;
+      color: #064E3B;
+      font-weight: 800;
+      font-size: 8.5pt;
+      padding: 4px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .goal-banner .text {
+      font-size: 10.4pt;
+      font-weight: 600;
+      color: #ECFDF5;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <section class="page">
+    <div class="page-body">
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <div class="hero-left">
+          <div class="hero-badge">✦ Personal Fitness &amp; Nutrition Blueprint</div>
+          <div class="hero-title">ফিটনেস, ডায়েট ও জিম ওয়ার্কআউট গাইড</div>
+          <div class="hero-sub">বাংলাদেশি খাবারের ৭ দিনের ডায়েট চার্ট এবং ৬ দিনের Beginner Female Gym Workout Plan</div>
+        </div>
+        <div class="hero-right">
+          <div class="label">Primary Focus</div>
+          <div class="val">Fitness • Toning • Strength</div>
+          <div style="font-size: 8pt; color: #CBD5E1; margin-top: 3px;">Beginner Female Plan</div>
+        </div>
+      </div>
+
+      <!-- Section 1: শারীরিক তথ্য -->
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">১</span>
+          <h2 class="section-title">আপনার শারীরিক তথ্য (Body Profile)</h2>
+        </div>
+        <span class="section-pill">BMI: ২৩.৪ • স্বাভাবিক সীমা (১৮.৫ – ২৪.৯)</span>
+      </div>
+
+      <div class="profile-box">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">উচ্চতা</div>
+            <div class="stat-value">৫ ফুট ২ ইঞ্চি (5'2")</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">ওজন</div>
+            <div class="stat-value">৫৮ কেজি</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">বয়স</div>
+            <div class="stat-value">২১–২৩ বছর</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">লিঙ্গ</div>
+            <div class="stat-value">Female</div>
+          </div>
+          <div class="stat-card highlight">
+            <div class="stat-label">BMI</div>
+            <div class="stat-value">প্রায় ২৩.৪</div>
+          </div>
+          <div class="stat-card goal-card">
+            <div class="stat-label">লক্ষ্য</div>
+            <div class="stat-value">Fitness, body toning ও strength</div>
+          </div>
+        </div>
+
+        <div class="bmi-row">
+          <div class="bmi-gauge-wrap">
+            <div class="bmi-gauge-labels">
+              <span>১৮.৫</span>
+              <span>স্বাভাবিক (২৩.৪)</span>
+              <span>২৪.৯</span>
+            </div>
+            <div class="bmi-bar">
+              <div class="bmi-marker"></div>
+            </div>
+          </div>
+          <div class="bmi-note">
+            <strong>শারীরিক বিশ্লেষণ:</strong> আপনার BMI স্বাভাবিক সীমার মধ্যে রয়েছে। তাই খুব বেশি ওজন কমানোর প্রয়োজন নেই। শরীরের ফ্যাট কমিয়ে পেশি শক্ত করা এবং ফিট থাকা ভালো লক্ষ্য হতে পারে।
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: ৭ দিনের ডায়েট চার্ট (Days 1 - 4) -->
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">২</span>
+          <h2 class="section-title">৭ দিনের ডায়েট চার্ট (Day 1 – Day 4)</h2>
+        </div>
+        <span class="section-pill">বাংলাদেশি খাবার • পরিমাণসহ • Gym Workout-এর জন্য</span>
+      </div>
+
+      <!-- Daily Meal Timing Reference Bar -->
+      <div class="meal-timing-bar">
+        <div class="timing-pill"><span class="timing-dot"></span> সকাল ৭:৩০ (নাস্তা)</div>
+        <div class="timing-pill"><span class="timing-dot" style="background:#0D9488;"></span> সকাল ১০:৩০ (ফল)</div>
+        <div class="timing-pill"><span class="timing-dot" style="background:#4F46E5;"></span> দুপুর ১:৩০ (লাঞ্চ)</div>
+        <div class="timing-pill"><span class="timing-dot" style="background:#D97706;"></span> বিকাল ৪:৩০ (প্রি-জিম)</div>
+        <div class="timing-pill"><span class="timing-dot" style="background:#059669;"></span> রাত ৮:৩০ (ডিনার)</div>
+      </div>
+
+      <div class="diet-grid">
+        <!-- Day 1 -->
+        <div class="day-card">
+          <div class="day-card-header emerald">
+            <span>Day 1 – Saturday</span>
+            <span class="day-tag">শনিবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল ৭:৩০</td><td class="meal-food">২টি সিদ্ধ ডিম + ২টি আটার রুটি + শসা</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি আপেল</td></tr>
+            <tr><td class="meal-time">দুপুর ১:৩০</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম মাছ + সবজি + ডাল ½ কাপ</td></tr>
+            <tr><td class="meal-time">বিকাল ৪:৩০</td><td class="meal-food">১টি কলা + ১ কাপ দুধ</td></tr>
+            <tr><td class="meal-time">রাত ৮:৩০</td><td class="meal-food">২টি রুটি + ১২০ গ্রাম চিকেন + সবজি</td></tr>
+          </table>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card">
+          <div class="day-card-header">
+            <span>Day 2 – Sunday</span>
+            <span class="day-tag">রবিবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল</td><td class="meal-food">১ কাপ দুধ দিয়ে ওটস + ১টি সিদ্ধ ডিম</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি পেয়ারা</td></tr>
+            <tr><td class="meal-time">দুপুর</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম চিকেন + সবজি</td></tr>
+            <tr><td class="meal-time">বিকাল</td><td class="meal-food">১টি কলা + ১০টি বাদাম</td></tr>
+            <tr><td class="meal-time">রাত</td><td class="meal-food">২টি রুটি + ১২০ গ্রাম মাছ + সবজি</td></tr>
+          </table>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card">
+          <div class="day-card-header">
+            <span>Day 3 – Monday</span>
+            <span class="day-tag">সোমবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল</td><td class="meal-food">২টি রুটি + ২টি ডিম + সবজি</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি কমলা</td></tr>
+            <tr><td class="meal-time">দুপুর</td><td class="meal-food">১ কাপ ভাত + ১ কাপ ডাল + ১২০ গ্রাম মাছ + সবজি</td></tr>
+            <tr><td class="meal-time">বিকাল</td><td class="meal-food">১ কাপ দুধ + ১টি কলা</td></tr>
+            <tr><td class="meal-time">রাত</td><td class="meal-food">২টি রুটি + ১২০ গ্রাম চিকেন + সালাদ</td></tr>
+          </table>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card">
+          <div class="day-card-header emerald">
+            <span>Day 4 – Tuesday</span>
+            <span class="day-tag">মঙ্গলবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল</td><td class="meal-food">১ কাপ ওটস + ১টি ডিম + ১টি কলা</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি পেয়ারা</td></tr>
+            <tr><td class="meal-time">দুপুর</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম মাছ + সবজি + ডাল</td></tr>
+            <tr><td class="meal-time">বিকাল</td><td class="meal-food">১ কাপ দই + ১০টি বাদাম</td></tr>
+            <tr><td class="meal-time">রাত</td><td class="meal-food">২টি রুটি + ১২০ গ্রাম চিকেন + সবজি</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tip-strip">
+        <span><strong>ওয়ার্কআউট নিউট্রিশন টিপস:</strong> জিমের আগে কলা বা হালকা খাবার শক্তি জোগায় এবং জিমের পরে প্রোটিন পেশি গঠনে সাহায্য করে।</span>
+        <span style="font-weight: 700; color: var(--emerald-800);">পানি: ২–৩ লিটার/দিন</span>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Fitness, Body Toning &amp; Strength Guide • বাংলাদেশি ডায়েট ও জিম প্ল্যান</span>
+      <span>পৃষ্ঠা ১ / ৪</span>
+    </div>
+  </section>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <section class="page">
+    <div class="page-body">
+      <div class="running-header">
+        <div class="brand">✦ FITNESS &amp; NUTRITION PLAN</div>
+        <div>অধ্যায় ২: ৭ দিনের ডায়েট চার্ট (Day 5 – Day 7) এবং ডায়েটের গুরুত্বপূর্ণ নিয়ম</div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">২</span>
+          <h2 class="section-title">৭ দিনের ডায়েট চার্ট (Day 5 – Day 7)</h2>
+        </div>
+        <span class="section-pill">দৈনিক ৫ বেলা সুষম বাংলাদেশি খাবার</span>
+      </div>
+
+      <div class="diet-grid">
+        <!-- Day 5 -->
+        <div class="day-card">
+          <div class="day-card-header emerald">
+            <span>Day 5 – Wednesday</span>
+            <span class="day-tag">বুধবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল</td><td class="meal-food">২টি রুটি + ২টি ডিম + শসা</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি আপেল</td></tr>
+            <tr><td class="meal-time">দুপুর</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম চিকেন + সবজি</td></tr>
+            <tr><td class="meal-time">বিকাল</td><td class="meal-food">১টি কলা + ১ কাপ দুধ</td></tr>
+            <tr><td class="meal-time">রাত</td><td class="meal-food">২টি রুটি + ১২০ গ্রাম মাছ + সবজি</td></tr>
+          </table>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-card">
+          <div class="day-card-header">
+            <span>Day 6 – Thursday</span>
+            <span class="day-tag">বৃহস্পতিবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল</td><td class="meal-food">১ কাপ দুধ দিয়ে ওটস + ২টি ডিম</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি কমলা</td></tr>
+            <tr><td class="meal-time">দুপুর</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম মাছ + ডাল + সবজি</td></tr>
+            <tr><td class="meal-time">বিকাল</td><td class="meal-food">১ কাপ দই + ১টি কলা</td></tr>
+            <tr><td class="meal-time">রাত</td><td class="meal-food">২টি রুটি + ১২০ গ্রাম চিকেন + সবজি</td></tr>
+          </table>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="day-card">
+          <div class="day-card-header">
+            <span>Day 7 – Friday</span>
+            <span class="day-tag">শুক্রবার</span>
+          </div>
+          <table class="meal-table">
+            <tr><td class="meal-time">সকাল</td><td class="meal-food">২টি রুটি + ২টি ডিম + সবজি</td></tr>
+            <tr><td class="meal-time">সকাল ১০:৩০</td><td class="meal-food">১টি পেয়ারা</td></tr>
+            <tr><td class="meal-time">দুপুর</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম চিকেন বা মাছ + সবজি</td></tr>
+            <tr><td class="meal-time">বিকাল</td><td class="meal-food">১ কাপ দুধ + ১০টি বাদাম</td></tr>
+            <tr><td class="meal-time">রাত</td><td class="meal-food">১ কাপ ভাত + ১২০ গ্রাম মাছ + সবজি</td></tr>
+          </table>
+        </div>
+
+        <!-- Daily Nutrition Summary Card -->
+        <div class="summary-card">
+          <div>
+            <div class="summary-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#065F46" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>প্রতিদিনের পুষ্টি ও ফুয়েল সংক্ষেপ</span>
+            </div>
+            <ul class="summary-list">
+              <li><span>প্রধান প্রোটিন উৎস</span> <strong>ডিম, মাছ, চিকেন, দুধ, দই, ডাল</strong></li>
+              <li><span>প্রধান কার্বোহাইড্রেট</span> <strong>ভাত, আটার রুটি, ওটস</strong></li>
+              <li><span>ভিটামিন ও ফাইবার</span> <strong>আপেল, পেয়ারা, কমলা, কলা, সবজি</strong></li>
+              <li><span>হেলদি ফ্যাট ও এনার্জি</span> <strong>কাঠবাদাম / চিনাবাদাম (১০টি)</strong></li>
+              <li><span>দৈনিক পানির লক্ষ্যমাত্রা</span> <strong>প্রতিদিন ২–৩ লিটার</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ডায়েটের গুরুত্বপূর্ণ নিয়ম -->
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">✓</span>
+          <h2 class="section-title">ডায়েটের গুরুত্বপূর্ণ নিয়ম</h2>
+        </div>
+        <span class="section-pill">সুস্থ ও ফিট থাকার ৭টি মূলনীতি</span>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-item">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </span>
+          <span>প্রতিদিন ২–৩ লিটার পানি পান করুন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/></svg>
+          </span>
+          <span>প্রতিদিন খাবারে পর্যাপ্ত প্রোটিন রাখুন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <span>ভাত ও রুটি সম্পূর্ণ বাদ দেওয়ার প্রয়োজন নেই।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/></svg>
+          </span>
+          <span>অতিরিক্ত তেল, কোমল পানীয়, ফাস্ট ফুড ও মিষ্টি কম খাবেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </span>
+          <span>জিমের আগে কলা বা হালকা খাবার খেতে পারেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+          </span>
+          <span>জিমের পরে ডিম, মাছ, চিকেন, দুধ বা দইয়ের মতো প্রোটিনযুক্ত খাবার খাবেন।</span>
+        </div>
+        <div class="rule-item span-2">
+          <span class="rule-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18M3 9l9-6 9 6M3 15h18"/></svg>
+          </span>
+          <span>খাবারের পরিমাণ আপনার ক্ষুধা, ব্যায়াম ও দৈনিক কাজ অনুযায়ী সামঞ্জস্য করবেন।</span>
+        </div>
+      </div>
+
+      <!-- Weekly Habit Tracker -->
+      <div class="tracker-box">
+        <div class="tracker-header">
+          <span>সাপ্তাহিক ডায়েট ও হাইড্রেশন চেকলিস্ট (Weekly Consistency Tracker)</span>
+          <span style="font-size: 8pt; color: var(--emerald-700);">প্রতিদিন সম্পন্ন করে টিক (✓) দিন</span>
+        </div>
+        <table class="tracker-table">
+          <thead>
+            <tr>
+              <th>দৈনিক অভ্যাস (Daily Habit)</th>
+              <th>Sat</th>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>২–৩ লিটার পানি পান করা</td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+            </tr>
+            <tr>
+              <td>প্রতি বেলার খাবারে পর্যাপ্ত প্রোটিন রাখা</td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+            </tr>
+            <tr>
+              <td>অতিরিক্ত তেল, ফাস্ট ফুড ও মিষ্টি এড়িয়ে চলা</td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+              <td><span class="check-circle"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Fitness, Body Toning &amp; Strength Guide • বাংলাদেশি ডায়েট ও জিম প্ল্যান</span>
+      <span>পৃষ্ঠা ২ / ৪</span>
+    </div>
+  </section>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <section class="page">
+    <div class="page-body">
+      <div class="running-header">
+        <div class="brand">✦ FITNESS &amp; NUTRITION PLAN</div>
+        <div>অধ্যায় ৩: ৬ দিনের Gym Workout Plan (Beginner Female)</div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">৩</span>
+          <h2 class="section-title">৬ দিনের Gym Workout Plan (Day 1 – Day 4)</h2>
+        </div>
+        <span class="section-pill">Beginner Female • Strength + Fitness + Body Toning</span>
+      </div>
+
+      <!-- 4 Reference Workout Photos from Prompt -->
+      <div class="photo-strip">
+        <div class="photo-card">
+          <span class="photo-tag">Warm-up &amp; Cardio</span>
+          <img src="img_1.jpg" alt="Treadmill Walking Warm-up" />
+          <div class="photo-caption">Treadmill Warm-up &amp; Walking</div>
+        </div>
+        <div class="photo-card">
+          <span class="photo-tag">Lower Body</span>
+          <img src="img_2.jpg" alt="Leg Press Lower Body" />
+          <div class="photo-caption">Leg Press (Legs &amp; Glutes)</div>
+        </div>
+        <div class="photo-card">
+          <span class="photo-tag">Upper Body</span>
+          <img src="img_3.jpg" alt="Lat Pulldown Upper Body" />
+          <div class="photo-caption">Lat Pulldown (Back &amp; Posture)</div>
+        </div>
+        <div class="photo-card">
+          <span class="photo-tag">Shoulders &amp; Arms</span>
+          <img src="img_4.jpg" alt="Dumbbell Shoulder Press" />
+          <div class="photo-caption">Dumbbell Shoulder Press</div>
+        </div>
+      </div>
+
+      <!-- Weekly Split Overview Strip -->
+      <div class="split-strip">
+        <div class="split-day active-lower"><div class="d-num">Day 1</div><div class="d-focus">Legs &amp; Glutes</div></div>
+        <div class="split-day active-upper"><div class="d-num">Day 2</div><div class="d-focus">Upper Body</div></div>
+        <div class="split-day"><div class="d-num">Day 3</div><div class="d-focus">Cardio + Abs</div></div>
+        <div class="split-day active-lower"><div class="d-num">Day 4</div><div class="d-focus">Glutes &amp; Legs</div></div>
+        <div class="split-day active-upper"><div class="d-num">Day 5</div><div class="d-focus">Upper + Core</div></div>
+        <div class="split-day active-lower"><div class="d-num">Day 6</div><div class="d-focus">Full Body</div></div>
+        <div class="split-day rest"><div class="d-num">Day 7</div><div class="d-focus">Rest Day</div></div>
+      </div>
+
+      <div class="diet-grid">
+        <!-- Day 1 Workout -->
+        <div class="day-card">
+          <div class="day-card-header emerald">
+            <span>Day 1 – Lower Body (Legs &amp; Glutes)</span>
+            <span class="day-tag">Lower Body</span>
+          </div>
+          <table class="workout-table">
+            <thead>
+              <tr><th>Exercise</th><th>সেট × রিপ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Treadmill warm-up</td><td><span class="rep-badge amber">১০ মিনিট</span></td></tr>
+              <tr><td>Leg Press</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Goblet Squat</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Leg Extension</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Leg Curl</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Glute Bridge</td><td><span class="rep-badge">৩ × ১৫</span></td></tr>
+              <tr><td>Walking</td><td><span class="rep-badge amber">১০ মিনিট</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Day 2 Workout -->
+        <div class="day-card">
+          <div class="day-card-header indigo">
+            <span>Day 2 – Upper Body</span>
+            <span class="day-tag">Upper Body</span>
+          </div>
+          <table class="workout-table">
+            <thead>
+              <tr><th>Exercise</th><th>সেট × রিপ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Treadmill warm-up</td><td><span class="rep-badge amber">৫–১০ মিনিট</span></td></tr>
+              <tr><td>Lat Pulldown</td><td><span class="rep-badge indigo">৩ × ১২</span></td></tr>
+              <tr><td>Seated Cable Row</td><td><span class="rep-badge indigo">৩ × ১২</span></td></tr>
+              <tr><td>Chest Press</td><td><span class="rep-badge indigo">৩ × ১২</span></td></tr>
+              <tr><td>Dumbbell Shoulder Press</td><td><span class="rep-badge indigo">২ × ১২</span></td></tr>
+              <tr><td>Biceps Curl</td><td><span class="rep-badge indigo">২ × ১২</span></td></tr>
+              <tr><td>Triceps Pushdown</td><td><span class="rep-badge indigo">২ × ১২</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Day 3 Workout -->
+        <div class="day-card">
+          <div class="day-card-header">
+            <span>Day 3 – Cardio + Abs</span>
+            <span class="day-tag">Cardio &amp; Core</span>
+          </div>
+          <table class="workout-table">
+            <thead>
+              <tr><th>Exercise</th><th>সময় / রিপ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Treadmill walking</td><td><span class="rep-badge amber">১৫ মিনিট</span></td></tr>
+              <tr><td>Elliptical</td><td><span class="rep-badge amber">১০ মিনিট</span></td></tr>
+              <tr><td>Bicycle Crunch</td><td><span class="rep-badge">৩ × ১৫</span></td></tr>
+              <tr><td>Plank</td><td><span class="rep-badge">৩ × ২০–৩০ সেকেন্ড</span></td></tr>
+              <tr><td>Leg Raises</td><td><span class="rep-badge">২ × ১০</span></td></tr>
+              <tr><td>Cool-down</td><td><span class="rep-badge amber">৫ মিনিট</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Day 4 Workout -->
+        <div class="day-card">
+          <div class="day-card-header emerald">
+            <span>Day 4 – Lower Body (Glutes &amp; Legs)</span>
+            <span class="day-tag">Glutes &amp; Legs</span>
+          </div>
+          <table class="workout-table">
+            <thead>
+              <tr><th>Exercise</th><th>সেট × রিপ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Warm-up walking</td><td><span class="rep-badge amber">১০ মিনিট</span></td></tr>
+              <tr><td>Hip Thrust</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Dumbbell Romanian Deadlift</td><td><span class="rep-badge">৩ × ১০</span></td></tr>
+              <tr><td>Leg Press</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Leg Curl</td><td><span class="rep-badge">৩ × ১২</span></td></tr>
+              <tr><td>Hip Abduction Machine</td><td><span class="rep-badge">৩ × ১৫</span></td></tr>
+              <tr><td>Calf Raises</td><td><span class="rep-badge">২ × ১৫</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Fitness, Body Toning &amp; Strength Guide • বাংলাদেশি ডায়েট ও জিম প্ল্যান</span>
+      <span>পৃষ্ঠা ৩ / ৪</span>
+    </div>
+  </section>
+
+  <!-- ==================== PAGE 4 ==================== -->
+  <section class="page">
+    <div class="page-body">
+      <div class="running-header">
+        <div class="brand">✦ FITNESS &amp; NUTRITION PLAN</div>
+        <div>অধ্যায় ৩ ও ৪: Gym Workout Plan (Day 5 – Day 7) এবং জিম করার নিয়ম</div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">৩</span>
+          <h2 class="section-title">৬ দিনের Gym Workout Plan (Day 5 – Day 7)</h2>
+        </div>
+        <span class="section-pill">Upper Body • Full Body • Rest Day</span>
+      </div>
+
+      <div class="diet-grid">
+        <!-- Day 5 Workout -->
+        <div class="day-card">
+          <div class="day-card-header indigo">
+            <span>Day 5 – Upper Body + Core</span>
+            <span class="day-tag">Upper + Core</span>
+          </div>
+          <table class="workout-table">
+            <thead>
+              <tr><th>Exercise</th><th>সেট × রিপ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Warm-up</td><td><span class="rep-badge amber">৫–১০ মিনিট</span></td></tr>
+              <tr><td>Chest Press</td><td><span class="rep-badge indigo">৩ × ১২</span></td></tr>
+              <tr><td>Lat Pulldown</td><td><span class="rep-badge indigo">৩ × ১২</span></td></tr>
+              <tr><td>Seated Row</td><td><span class="rep-badge indigo">৩ × ১২</span></td></tr>
+              <tr><td>Lateral Raise</td><td><span class="rep-badge indigo">২ × ১২</span></td></tr>
+              <tr><td>Biceps Curl</td><td><span class="rep-badge indigo">২ × ১২</span></td></tr>
+              <tr><td>Triceps Pushdown</td><td><span class="rep-badge indigo">২ × ১২</span></td></tr>
+              <tr><td>Plank</td><td><span class="rep-badge">৩ × ২০–৩০ সেকেন্ড</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Day 6 Workout -->
+        <div class="day-card">
+          <div class="day-card-header emerald">
+            <span>Day 6 – Full Body + Cardio</span>
+            <span class="day-tag">Full Body</span>
+          </div>
+          <table class="workout-table">
+            <thead>
+              <tr><th>Exercise</th><th>সেট × রিপ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Treadmill</td><td><span class="rep-badge amber">১০ মিনিট</span></td></tr>
+              <tr><td>Goblet Squat</td><td><span class="rep-badge">২ × ১২</span></td></tr>
+              <tr><td>Dumbbell Romanian Deadlift</td><td><span class="rep-badge">২ × ১২</span></td></tr>
+              <tr><td>Chest Press</td><td><span class="rep-badge">২ × ১২</span></td></tr>
+              <tr><td>Lat Pulldown</td><td><span class="rep-badge">২ × ১২</span></td></tr>
+              <tr><td>Glute Bridge</td><td><span class="rep-badge">২ × ১৫</span></td></tr>
+              <tr><td>Walking</td><td><span class="rep-badge amber">১৫ মিনিট</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Day 7 Rest Day -->
+      <div class="rest-card">
+        <h4>
+          <span>Day 7 – Rest Day (সাপ্তাহিক বিশ্রামের দিন)</span>
+          <span style="font-size: 7.8pt; background: #FDE68A; color: #78350F; padding: 2px 10px; border-radius: 999px; font-weight: 700;">Active Recovery &amp; Sleep</span>
+        </h4>
+        <ul class="rest-list">
+          <li>• জিম করবেন না।</li>
+          <li>• ২০–৩০ মিনিট হালকা হাঁটতে পারেন।</li>
+          <li>• পর্যাপ্ত ঘুম ও বিশ্রাম নিন।</li>
+        </ul>
+      </div>
+
+      <!-- Section 4: জিম করার নিয়ম -->
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-num">৪</span>
+          <h2 class="section-title">জিম করার নিয়ম (Gym Rules &amp; Safety)</h2>
+        </div>
+        <span class="section-pill">নিরাপদ ও কার্যকর অনুশীলনের ৭টি নিয়ম</span>
+      </div>
+
+      <!-- Ideal Workout Session Flow -->
+      <div class="session-flow">
+        <div class="flow-step">
+          <span class="step-tag">Step 01 • শুরুর প্রস্তুতি</span>
+          <span class="step-title">৫–১০ মিনিট Warm-up</span>
+          <span class="step-desc">হালকা ট্রেডমিল ওয়াকিং ও স্ট্রেচিং</span>
+        </div>
+        <div class="flow-step">
+          <span class="step-tag">Step 02 • মূল ব্যায়াম</span>
+          <span class="step-title">সঠিক Form ও হালকা ওজন</span>
+          <span class="step-desc">প্রথম ২ সপ্তাহ ফর্ম শেখায় মনোযোগ</span>
+        </div>
+        <div class="flow-step">
+          <span class="step-tag">Step 03 • সেটের বিরতি</span>
+          <span class="step-title">৬০–৯০ সেকেন্ড বিশ্রাম</span>
+          <span class="step-desc">প্রতি সেটের মাঝে শ্বাস স্বাভাবিক করুন</span>
+        </div>
+        <div class="flow-step">
+          <span class="step-tag">Step 04 • রিকভারি</span>
+          <span class="step-title">৭–৯ ঘণ্টা ঘুম ও প্রোটিন</span>
+          <span class="step-desc">পেশি গঠন ও শক্তি বৃদ্ধির মূল চাবিকাঠি</span>
+        </div>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-item">
+          <span class="rule-icon">১</span>
+          <span>প্রতিদিন ৫–১০ মিনিট Warm-up করবেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">২</span>
+          <span>প্রথম ২ সপ্তাহ হালকা ওজন দিয়ে শুরু করবেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">৩</span>
+          <span>প্রতিটি সেটের মাঝে ৬০–৯০ সেকেন্ড বিশ্রাম নেবেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">৪</span>
+          <span>সঠিক Exercise Form বজায় রাখবেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">৫</span>
+          <span>কোনো ব্যায়ামে ব্যথা হলে বন্ধ করবেন।</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">৬</span>
+          <span>সপ্তাহে অন্তত ১ দিন সম্পূর্ণ বিশ্রাম নেবেন।</span>
+        </div>
+        <div class="rule-item span-2">
+          <span class="rule-icon">৭</span>
+          <span>প্রতিদিন ৭–৯ ঘণ্টা ঘুমানোর চেষ্টা করবেন।</span>
+        </div>
+      </div>
+
+      <!-- Primary Goal Footer Banner -->
+      <div class="goal-banner">
+        <span class="badge">প্রথম লক্ষ্য</span>
+        <div class="text">নিয়মিত জিম করা, শক্তি বাড়ানো, শরীরের গঠন উন্নত করা এবং স্বাস্থ্যকর খাবার খাওয়া।</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Fitness, Body Toning &amp; Strength Guide • বাংলাদেশি ডায়েট ও জিম প্ল্যান</span>
+      <span>পৃষ্ঠা ৪ / ৪</span>
+    </div>
+  </section>
+
+</body>
+</html>
